@@ -1,0 +1,13 @@
+version: '2'
+services:
+    openbanklocal-app:
+        image: openbanklocal
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://openbanklocal-postgresql:5432/openbanklocal
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+    openbanklocal-postgresql:
+        extends:
+            file: postgresql.yml
+            service: openbanklocal-postgresql

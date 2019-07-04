@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "enableHibernateCache": true,
+    "enableSwaggerCodegen": false,
+    "enableTranslation": true,
+    "jhiPrefix": "jhi",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "messageBroker": false,
+    "nativeLanguage": "en",
+    "packageName": "com.infy.openbanklocal",
+    "packageFolder": "com/infy/openbanklocal",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "serviceDiscoveryType": false,
+    "skipClient": true,
+    "testFrameworks": [],
+    "websocket": false,
+    "baseName": "openbanklocal",
+    "applicationType": "microservice",
+    "buildTool": "maven",
+    "serverPort": "8080",
+    "skipUserManagement": true,
+    "jhipsterVersion": "5.8.2",
+    "clientPackageManager": "npm",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "jwtSecretKey": "YjYwNTA4N2MxMGUyNWE4NTg1ODc5NzYyNGRlYTI4MDZlMDM3NjdkNTE0OTNhNjYxOWJjZmU3ZjA4NzE4ZDY3ODgzNWQ5Mzc5NzIyNzIzYTVhOTJmODE5Y2QyMWYwNzlmYjllOWU1ZmJmYjViOWE5NzZjYzhlZjhmYWE5ZWM2OTY=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "entities": [
+    "Customer"
+  ]
+}

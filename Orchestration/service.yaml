@@ -1,0 +1,22 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: openbanklocal
+  labels:
+    app: openbanklocal
+    
+spec:
+  type: NodePort
+  selector:
+    app: openbanklocal
+  ports:
+  - port: 8091
+    name: http
+    targetPort: 8091
+  - port: 8090
+    name: tracing
+    targetPort: 8090
+  - port: 8080
+    name: jmx
+    targetPort: 8080
+ 

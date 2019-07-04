@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+
+<configuration scan="true">
+   <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    
+    <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.err</target>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+          <level>WARN</level>
+        </filter>
+        <encoder>
+            <pattern>AppLog | %d{yyyy-MM-dd HH:mm:ss.SSS} | %5p | %-40.40logger{39} | %replace(%m%wEx){'\n','&#x000D;'}%nopex%n</pattern>
+        </encoder>
+        
+        
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+          <level>DEBUG</level>
+          <onMatch>ACCEPT</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+          <level>INFO</level>
+          <onMatch>ACCEPT</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+          <level>TRACE</level>
+          <onMatch>ACCEPT</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+          <level>WARN</level>
+          <onMatch>DENY</onMatch>
+        </filter>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+          <level>ERROR</level>
+          <onMatch>DENY</onMatch>
+        </filter>
+        <encoder>
+           <pattern>AppLog | %d{yyyy-MM-dd HH:mm:ss.SSS} | %5p | %-40.40logger{39} | %replace(%m%wEx){'\n','&#x000D;'}%nopex%n</pattern>
+        </encoder>
+        
+        
+    </appender>
+
+    <logger name="com.infy.stock" level="INFO" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+		
+    <logger name="io.github.jhipster" level="WARN" additivity="false">
+    	<appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+
+    <logger name="javax.activation" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="javax.mail" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="javax.xml.bind" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="ch.qos.logback" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="com.netflix" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="com.netflix.discovery" level="INFO" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="com.ryantenney" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="com.sun" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="com.zaxxer" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="io.undertow" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="io.undertow.websockets.jsr" level="ERROR" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.apache" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.apache.catalina.startup.DigesterFactory" level="OFF" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.bson" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.hibernate.validator" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.hibernate" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.hibernate.ejb.HibernatePersistence" level="OFF" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.postgresql.jdbc" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.springframework" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.springframework.web" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.springframework.security" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.springframework.cache" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.thymeleaf" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="org.xnio" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="springfox" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="sun.rmi" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="liquibase" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="LiquibaseSchemaResolver" level="INFO" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="sun.net.www" level="INFO" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    <logger name="sun.rmi.transport" level="WARN" additivity="false">
+    <appender-ref ref="STDOUT" />
+		<appender-ref ref="STDERR" />
+   </logger>
+    
+    
+    
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDERR" />
+    </root>
+
+<!--      <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+-->
+</configuration>

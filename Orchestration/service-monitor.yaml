@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: openbanklocal
+  name: openbanklocal
+  namespace: openshift-monitoring
+spec:
+  endpoints:
+    - interval: 2m
+      port: prom
+      scrapeTimeout: 2m
+    - interval1: 30s
+      port: http1
+  namespaceSelector:
+    matchNames:
+    - openbank-dev-app
+    - openbank-test-app
+    - openbank-devops-app
+    
+  selector:
+    matchLabels:
+      app: openbanklocal
